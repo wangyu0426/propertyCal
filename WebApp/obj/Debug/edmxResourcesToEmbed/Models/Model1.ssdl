@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HLJModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HLJModelStoreContainer">
+    <EntitySet Name="LogRecord" EntityType="HLJModel.Store.LogRecord" store:Type="Tables" store:Schema="dbo" store:Name="LogRecord">
+      <DefiningQuery>SELECT 
+      [LogRecord].[Id] AS [Id], 
+      [LogRecord].[Date] AS [Date], 
+      [LogRecord].[Title] AS [Title], 
+      [LogRecord].[Message] AS [Message]
+      FROM [dbo].[LogRecord] AS [LogRecord]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Products" EntityType="HLJModel.Store.Products" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'HLJ.dbo.LogRecord' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="LogRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Link" Type="nvarchar" MaxLength="500" />
+    <Property Name="Parent" Type="nvarchar" MaxLength="500" />
+    <Property Name="Thumb" Type="nvarchar" MaxLength="500" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pithy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stock" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Modified" Type="datetime" />
+  </EntityType>
+</Schema>

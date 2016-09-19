@@ -1,0 +1,27 @@
+﻿@using System.Configuration
+@using ServiceStack.Html
+@using WebApp.Plumping
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Hungry Lousy Jack</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="Content-Language" content="EN">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <base href='@SSHelper.AbsoluteBaseUrl()'/>
+
+        <link rel="stylesheet" type="text/css" href="Css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="bootstrap/3.0.2/css/bootstrap.min.css"> 
+        <link rel="stylesheet" type="text/css" href="Css/style.css"/> 
+        <!--[if (lt IE 10) ]><script type="text/javascript">alert("This page requires IE10 or later version.");</script><![endif]-->
+        <script type="text/javascript">var baseUrl = '@SSHelper.AbsoluteBaseUrl()';</script>
+        <script type="text/javascript" src="Scripts/linq.js"></script>
+        <script type="text/javascript" src="Scripts/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="Scripts/bootstrap-select.js"></script>
+    </head>
+    <body>
+        <noscript><div>Your browser does not support JavaScript!</div></noscript>
+        <div class="main">@RenderBody()</div>
+    </body>
+</html>

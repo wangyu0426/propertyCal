@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WAFIC15P.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WAFIC15PEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LogRecords" EntityType="WAFIC15P.Models.LogRecord" />
+    <EntitySet Name="VisitorRecords" EntityType="WAFIC15P.Models.VisitorRecord" />
+  </EntityContainer>
+  <EnumType Name="DownloadFlagType" a:ExternalTypeName="WAFIC15P.Models.DownloadFlagType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+  <EnumType Name="PaymentType" a:ExternalTypeName="WAFIC15P.Models.PaymentType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+  <EntityType Name="LogRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VisitorRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Suburb" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobileCountry" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CCEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+    <Property Name="DateDownloaded" Type="DateTime" Precision="3" />
+    <Property Name="Downloaded" Type="WAFIC15P.Models.DownloadFlagType" />
+    <Property Name="EventsID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MemberNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AcitvityResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentDateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentType" Type="WAFIC15P.Models.PaymentType" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardHolderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CardType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CardExpiry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CardPartialDigits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResponseText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HttpResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

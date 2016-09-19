@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WAFIC15P.Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="WAFIC15P_LogRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="WAFIC15P_VisitorRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="36" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="20" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="Company" Type="nvarchar" MaxLength="100" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Suburb" Type="nvarchar" MaxLength="100" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileCountry" Type="varchar" MaxLength="10" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="CCEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="DateDownloaded" Type="datetime" />
+    <Property Name="Downloaded" Type="int" />
+    <Property Name="EventsID" Type="varchar" MaxLength="10" />
+    <Property Name="MemberNo" Type="varchar" MaxLength="50" />
+    <Property Name="AcitvityResponse" Type="nvarchar(max)" />
+    <Property Name="PaymentDateTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentAmount" Type="money" />
+    <Property Name="PaymentType" Type="int" />
+    <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardHolderName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardType" Type="nchar" MaxLength="10" />
+    <Property Name="CardExpiry" Type="nchar" MaxLength="10" />
+    <Property Name="CardPartialDigits" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResponseText" Type="nvarchar(max)" />
+    <Property Name="HttpResponse" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="WAFIC15PModelsStoreContainer">
+    <EntitySet Name="WAFIC15P_LogRecord" EntityType="Self.WAFIC15P_LogRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WAFIC15P_VisitorRecord" EntityType="Self.WAFIC15P_VisitorRecord" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

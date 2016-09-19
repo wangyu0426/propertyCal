@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HLJModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HLJEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="LogRecords" EntityType="HLJModel.LogRecord" />
+    <EntitySet Name="Products" EntityType="HLJModel.Product" />
+  </EntityContainer>
+  <EntityType Name="LogRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Precision="3" />
+    <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Link" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Parent" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Thumb" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Pithy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Stock" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Price" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Created" Precision="3" />
+    <Property Type="DateTime" Name="Modified" Precision="3" />
+  </EntityType>
+</Schema>
